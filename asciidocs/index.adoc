@@ -1,4 +1,6 @@
-= 23/24 5bhitm irp - Lecture Notes
+= 23/24 5bhitm itp - Lecture Notes
+Thomas W. Stütz
+1.0.0, 2023-09-22: Informationstechnische Projekte
 ifndef::imagesdir[:imagesdir: images]
 :icons: font
 :experimental:
