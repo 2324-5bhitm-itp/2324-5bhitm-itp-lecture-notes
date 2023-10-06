@@ -25,3 +25,24 @@ image::projektkreislauf.png[]
 
 * Jedes Projektmitglied muss beim Code Review seine User Stories und Tasks präsentieren, seine Implementierung und die Verbindung zwischen Commits und Tasks
 
+== 2023-10-06
+
+=== Rel.DB vs noSQL
+
+* Was ist eine Datenbank?
+* Warum normalisieren?
+* Wie normalisiert man?
+* Ergebnis der Normalisierung?
+
+=== k8s
+
+==== Kanonische Applikation
+
+image::kanonische-applikation.png[]
+
+==== yaml-File
+
+* https://github.com/caberger/webpack-demo/blob/master/k8s/nginx.yaml[nginx.yaml (von Prof. Aberger)^]
+
+* ConfigMaps können als Files gemounted werden (zB für Konfiguration des nginx-Servers)
+
