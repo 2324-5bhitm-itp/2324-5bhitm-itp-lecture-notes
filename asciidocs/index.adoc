@@ -34,6 +34,15 @@ image::projektkreislauf.png[]
 * Wie normalisiert man?
 * Ergebnis der Normalisierung?
 
+image::2023-10-06-tafelbild1.PNG[]
+
+image::2023-10-06-tafelbild2.PNG[]
+
+image::database-types.jpeg[]
+
+image::database-types2.jpeg[]
+
+
 === k8s
 
 ==== Kanonische Applikation
