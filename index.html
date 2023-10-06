@@ -671,7 +671,10 @@ kubectl port-forward [podname] 4200:80</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://kodekloud.com/blog/" class="bare">https://kodekloud.com/blog/</a></p>
+<p><a href="https://kodekloud.com/blog/kubectl-cp/" class="bare" target="_blank" rel="noopener">https://kodekloud.com/blog/kubectl-cp/</a></p>
+</li>
+<li>
+<p><a href="https://kodekloud.com/blog/" class="bare" target="_blank" rel="noopener">https://kodekloud.com/blog/</a></p>
 </li>
 </ul>
 </div>
@@ -764,6 +767,70 @@ kubectl port-forward [podname] 4200:80</pre>
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_busybox_in_k8s"><a class="anchor" href="#_busybox_in_k8s"></a>3.2.3. BusyBox in k8s</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://levelup.gitconnected.com/busybox-in-k8s-the-swiss-army-knife-of-embedded-linux-ce7ced32de63" target="_blank" rel="noopener">BusyBox in K8S — The Swiss Army Knife of Embedded Linux</a></p>
+</li>
+<li>
+<p><a href="https://github.com/caberger/webpack-demo/blob/master/k8s/busybox-job.yaml" target="_blank" rel="noopener">busybox-job.yaml</a></p>
+</li>
+<li>
+<p>ein <code>kind: Job</code> wird nur einmal ausgeführt</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># busybox-job.yaml</span>
+
+<span class="c1"># this is our swiss army knife.</span>
+<span class="c1"># here we use it to copy our web-content to the persistent volume that is mounted by busybox.</span>
+<span class="c1"># after deployment busybox sleeps a while and we can use kubectl cp to copy files to the storage.</span>
+<span class="c1"># after some time the job stops</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">batch/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Job</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">knife</span>
+
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">backoffLimit</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">activeDeadlineSeconds</span><span class="pi">:</span> <span class="m">1800</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">busybox</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">busybox:latest</span>
+        <span class="na">command</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">/bin/sh"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">-c"</span><span class="pi">]</span>
+        <span class="na">args</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">mkdir -p /srv/demo;</span>
+            <span class="s">echo "&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;Copy your web app to this location on this persistent volume.&lt;br/&gt;To the api ==&gt; &lt;a href="./api/user"&gt;./api/user&lt;/a&gt;&lt;/body&gt;&lt;/html&gt;" &gt; /srv/demo/index.html;</span>
+            <span class="s">sleep 900;</span>
+            <span class="s">echo done;</span>
+        <span class="na">volumeMounts</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">html</span>
+          <span class="na">mountPath</span><span class="pi">:</span> <span class="s">/srv</span>
+          <span class="na">readOnly</span><span class="pi">:</span> <span class="kc">false</span>
+      <span class="na">volumes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">html</span>
+          <span class="na">persistentVolumeClaim</span><span class="pi">:</span>
+            <span class="na">claimName</span><span class="pi">:</span> <span class="s">nginx-www</span>
+      <span class="na">restartPolicy</span><span class="pi">:</span> <span class="s">Never</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Files zB von der Angular Anwendung werden gezippt und von der BusyBox entpackt und zur Verfügung gestellt</p>
+</li>
+<li>
+<p><a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/" target="_blank" rel="noopener">kubectl cheat sheet</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -771,7 +838,7 @@ kubectl port-forward [podname] 4200:80</pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2023-10-06 09:28:58 UTC
+Last updated 2023-10-06 09:45:30 UTC
 </div>
 </div>
 </body>
