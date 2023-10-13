@@ -213,8 +213,14 @@ spec:
 
 == 2023-10-13
 
+=== Feedbackrunde IoT-projekt
+
 image::2023-10-13-iot-projekt.png[]
 
+* Nächste Schritte
+** Erstellen der User Stories und Tasks im Youtrack (Sprint Planning)
 
+** Grobe Gesamtplanung für das Schuljahr mit Zwischenpräsentationsterminen
 
+=== Feedbackrunde Visualisierungs-Projekt
 
