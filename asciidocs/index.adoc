@@ -224,3 +224,9 @@ image::2023-10-13-iot-projekt.png[]
 
 === Feedbackrunde Visualisierungs-Projekt
 
+=== Feedbackrunde Franklyn
+
+
+* https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices/[Acceptance Criterias^]
+
+* https://www.linkedin.com/pulse/scrum-basics-whats-difference-between-user-story-task-edward-emerson/[User Story vs Task^]
