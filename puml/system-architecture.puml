@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+
+node "Fronius" {
+ [website]
+}
+
+node "Scrapper"
+
+node "SVG-Renderer"
+
+node "webserver"
+
+[website] --> Scrapper
+Scrapper --> "SVG-Renderer"
+"SVG-Renderer" --> "webserver" : REST >
+@enduml
