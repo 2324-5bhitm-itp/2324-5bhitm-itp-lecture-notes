@@ -237,5 +237,11 @@ image::lernstrategie1.png[]
 
 image::lernstrategie2.png[]
 
+== 2024-01-18
 
+image::git-merge-vs-rebase.JPG[]
+
+image::git-cherry-picking-1.png[]
+
+image::git-cherry-picking-2.png[]
 
