@@ -245,3 +245,26 @@ image::git-cherry-picking-1.png[]
 
 image::git-cherry-picking-2.png[]
 
+== 2024-03-21
+
+=== K8s
+
+image::k8s-overview.png[]
+
+image::k8s-elemente.png[]
+
+image::k8s-pvc.png[]
+
+=== Stoff der 3. Leistungsüberprüfung
+
+* Qualitätssicherung inkl. Theorie
+** assertj-core
+** assertj-db
+** rest-assured
+** jUnit
+
+* Agile Vorgehensweisen - Scrum
+
+
+
+
